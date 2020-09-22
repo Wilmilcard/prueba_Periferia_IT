@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
@@ -20,7 +21,7 @@ namespace Prueba_Periferia_IT
                     punto_B();
                     break;
                 case 3:
-                    Console.WriteLine("Escogio 3");
+                    punto_C();
                     break;
                 default:
                     Console.WriteLine("No valido!");
@@ -76,6 +77,22 @@ namespace Prueba_Periferia_IT
                 a = 0;
                 num += 1;
             }
+        }
+
+        private static void punto_C()
+        {
+            //Dada una cadena de texto compuesta por n palabras separadas por espacio(n > 1), escriba un algoritmo para escribir las palabras de la cadena en orden inverso.Asuma la cadena
+            //como un array de caracteres.
+            //Ejemplo: Input: “prueba de lógica”, Output: “lógica de prueba”
+
+            string frase = Console.ReadLine(), frase_reversa = "";
+            string[] palabras = frase.Split(' ');
+
+            foreach (var palabra in palabras.Reverse().ToArray())
+            {
+                frase_reversa += $"{palabra} ";
+            }
+            System.Console.WriteLine($"{frase_reversa}");
         }
 
     }
